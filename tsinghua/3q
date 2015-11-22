@@ -1,0 +1,21 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+int main()
+{
+	int i,num,max=0,min=0,sum=0;
+	int n[100];
+	//cin>>num;
+	scanf("%d",&num);
+	while(i=0,i<num,i++)
+	{
+		printf("test\n");
+		scanf("%d",&n[i]);
+		sum+=n[i];
+		if(n[i]>max)
+			max=n[i];
+		else min=n[i];
+	}
+	cout<<sum<<' '<<min<<' '<<max<<endl;
+	return 0;
+}
