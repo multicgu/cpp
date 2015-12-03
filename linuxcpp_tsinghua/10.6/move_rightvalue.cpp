@@ -19,7 +19,7 @@ class A
 		virtual ~A() {if(_p) {delete _p; _p = NULL;}}
 };
 A::A(const A & a) {*this = a;}
-A::A(A && a) {*this = static_cast<A &&>a;}
+A::A(A && a) {*this = static_cast<A &&>(a);}
 A & A::operator=(const A & a)
 {
 	_n = a._n; _p = new int[_n];
@@ -49,7 +49,7 @@ int main()
 	for(int i=0;i<4;i++) printf("a[%d] = %d; ",i,a[i]); cout << endl;
 	b = a;
 	for(int i=0;i<4;i++) printf("b[%d] = %d; ",i,b[i]); cout << endl;
-	A c(static_cast<A &&>b);
+	A c(static_cast<A &&>(b));
 	for(int i=0;i<4;i++) printf("c[%d] = %d; ",i,c[i]); cout << endl;
 	return 0;
 }
