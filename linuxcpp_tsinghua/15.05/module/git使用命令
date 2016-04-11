@@ -1,0 +1,38 @@
+git 使用命令
+git init                        #建仓库；
+git add filename                #添加新或修改文件到版本库缓存区(index/stage)；
+git commit -m "note"            #确认添加到版本库master分支;
+git status                      #查看git状态；
+git diff filename               #比较修改文件；
+git log                         #查看现有版本；
+git reset --hard HEAD^          #一个^代表往前退回一个版本。n个就退回n个版本；
+git reset --hard HEAD~n         #退回n个版本；
+git reset --hard commitnumber   #调整到相应的版本号；
+git reflog                      #查看有过的命令，及commit号；
+git checkout -- filename        #将文件退回到最近的一次git add或git commit时的状态/恢复版本库文件到工作目录删除文件；
+git reset HEAD filename         #将暂存取的修改撤回掉（unstage），重新回到工作区；
+git rm filename        		  #删除版本库文件（需提交）； 
+git remote add origin https://github.com/multicgu/learngit.git    #本地库关联远程库；
+git push -u origin master       #将master分支推送给远程库；
+git push origin master          #将master分支推送远程库；
+git branch dev                  #创建分支dev；
+git checkout dev                #切换分支到dev；
+git checkout -b dev             #创建分支及切换分支到dev；
+git branch                      #查看当前分支；
+git merge dev                   #git merge 合并指定分支到当前分支；
+git branch -d dev               #删除分支dev；
+git merge --no-ff -m "xx" dev   #现分支与dev分支合并，不禁用fast forward；（分支历史上留下信息）
+git log --graph --pretty=oneline --abbrev-commit    #一行查看现有版本；
+git stash                       #将当前工作现场储存；(可以多次stash)
+git stash list                  #列出当前储存的工作现场；
+git stash pop                   #恢复存储的工作现场并删除stash list内容；
+git stash apply                 #恢复存储的工作现场；
+git stash drop                  #删除stash list内容；
+git stash apply stash@{0}       #恢复制定的stash存储内容；
+git clone git@github.com:multicgu/learngit.git    #克隆远程库；
+git pull                        #抓取远程分支对应所在本地分支；
+git remote -v                   #查看远程库信息；
+git branch --set-upstream dev origin/dev #将远程分支dev与本地分支dev作关联；
+git checkout -b dev origin/dev  #创建远程dev分支到本地；
+ 
+
